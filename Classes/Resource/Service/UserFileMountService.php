@@ -36,7 +36,7 @@ class UserFileMountService
     public function renderTceformsSelectDropdown(&$PA)
     {
         // If working for sys_filemounts table
-        $storageUid = (int)$PA['row']['base'][0];
+        $storageUid = isset($PA['row']['base'][0]) ? (int)$PA['row']['base'][0] : null;
         if (!$storageUid) {
             // If working for sys_file_collection table
             $storageUid = (int)$PA['row']['tx_gallery_storage'][0];

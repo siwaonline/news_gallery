@@ -7,7 +7,7 @@ $columns = [
     'tx_gallery_collections' => [
         'exclude' => true,
         'l10n_mode' => 'mergeIfNotBlank',
-        'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_collection',
+        'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_collection',
         'config' => [
             'type' => 'group',
             'internal_type' => 'db',
@@ -30,7 +30,7 @@ $columns = [
         ]
     ],
     'tx_gallery_storage' => [
-        'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_collection.storage',
+        'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_collection.storage',
         'onChange' => 'reload',
         'config' => [
             'type' => 'select',
@@ -47,7 +47,7 @@ $columns = [
     ],
     'tx_gallery_folder' => [
         'exclude' => true,
-        'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_collection.folder',
+        'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_collection.folder',
         'config' => [
             'type' => 'select',
             'renderType' => 'selectSingle',
@@ -59,4 +59,4 @@ $columns = [
 ];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_news_domain_model_news', $columns);
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_news_domain_model_news', 'tx_gallery_collections,tx_gallery_storage,tx_gallery_folder', '', 'after:fal_media');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_news_domain_model_news', 'tx_gallery_collections,tx_gallery_storage,tx_gallery_folder', '0,1,2', 'after:fal_media');
