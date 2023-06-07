@@ -37,7 +37,7 @@ class UserFileMountService
     {
         // If working for sys_filemounts table
         $storageUid = isset($PA['row']['base'][0]) ? (int)$PA['row']['base'][0] : null;
-        if (!$storageUid) {
+        if (!$storageUid && isset($PA['row']['tx_gallery_storage'][0])) {
             // If working for sys_file_collection table
             $storageUid = (int)$PA['row']['tx_gallery_storage'][0];
         }
